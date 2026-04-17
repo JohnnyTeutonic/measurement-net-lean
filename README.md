@@ -1,6 +1,6 @@
-# Measurement Net Foundations — Lean 4 Formalization
+# Measurement Net Foundations — Lean 4 Formalisation
 
-Lean 4 formalization of the core theorems from:
+Lean 4 formalisation of the core theorems from:
 
 > **From Measurement to the Standard Model: a Categorical Inverse Noether Programme**
 > Jonathan Reich (2026)
@@ -20,7 +20,7 @@ Continuity, Finite Distinguishability) via categorical reconstruction.
 | `MeasurementNetModuli.lean` | §7 | Moduli discreteness (stacky Ocneanu rigidity); continuity collapse; Spin(8)/triality orbit computation; Burnside and Frobenius verification |
 | `MeasurementNetIndependence.lean` | §3 | Five named countermodels proving postulate independence (Theorem 3.6) |
 | `MeasurementNetReconstruction.lean` | §8 | Connected-component reconstruction; visible monodromy reconstruction; locale reconstruction via frame equivalence |
-| `MeasurementNetClosure.lean` | §8 | Kernel-level closure; inert symmetry characterization; no-new-spacetime-symmetry theorem |
+| `MeasurementNetClosure.lean` | §8 | Kernel-level closure; inert symmetry characterisation; no-new-spacetime-symmetry theorem |
 | `MeasurementNetEnrichment.lean` | §8 | Heisenberg bridge schema; enrichment gap (monodromy alone does not close the gap to geometric quantization) |
 | `MeasurementNetQGObstruction.lean` | §8 | Fixed-target quantum gravity tension; target extension programme |
 | `MeasurementNetRigidity.lean` | §7 (Theorem B) | **Net rigidity**: fiber Ocneanu rigidity + discrete-target representation rigidity → vanishing net deformations; explicit reduction to Theorem A (moduli discreteness) |
@@ -35,7 +35,7 @@ Continuity, Finite Distinguishability) via categorical reconstruction.
 
 ## Theorem Package (CMP Submission Target)
 
-The formalization supports four main theorems foregrounded in the paper
+The formalisation supports four main theorems foregrounded in the paper
 revision:
 
 | Theorem | Content | File |
@@ -60,9 +60,9 @@ lake build MeasurementNetExactSequence MeasurementNetSplitting MeasurementNetMon
   MeasurementNetRigidity MeasurementNetAnomaly MeasurementNetMonodromy2Cat
 ```
 
-## Formalization Philosophy
+## Formalisation Philosophy
 
-The formalization follows an **abstract-packaging** approach: each paper theorem
+The formalisation follows an **abstract-packaging** approach: each paper theorem
 is encoded as a structure bundling its hypotheses and a theorem discharging the
 conclusion from those hypotheses. This avoids importing the full apparatus of
 operator algebras or higher categories into Lean while still machine-checking the

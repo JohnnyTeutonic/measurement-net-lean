@@ -2,7 +2,7 @@
   MeasurementNetRigidity.lean
   Theorem B: Rigidity of locally constant measurement nets.
 
-  Formalizes the network-level analog of Ocneanu rigidity. In the regime where
+  Formalises the network-level analog of Ocneanu rigidity. In the regime where
   (i) each fiber is a ℂ-linear symmetric fusion category (hence fiber-level
   Ocneanu rigidity applies: H²_DY = H³_DY = 0), and (ii) the classifying map
   lands in the discrete π₀ of the moduli stack of such categories, the
@@ -78,7 +78,7 @@ theorem fiber_obstructions_trivial (F : FiberRigidity) :
     Theorem 6.3 (monodromy classification) is the underlying reason for
     this shape.
 
-    In this formalization, `Pi1` plays the role of `π₁(X)` and `FiberAutEq`
+    In this formalisation, `Pi1` plays the role of `π₁(X)` and `FiberAutEq`
     plays the role of `AutEq(C)` — the π₀ of the auto-equivalence 2-group
     of the typical fiber. -/
 structure LocallyConstantNet where
@@ -104,7 +104,7 @@ attribute [instance] LocallyConstantNet.fiberAutGroup
     *discrete* (encoded here as: every homomorphism agrees with the base
     one up to a specified deformation datum), the deformations collapse.
 
-    We formalize discreteness of the target as: the target has no path
+    We formalise discreteness of the target as: the target has no path
     structure beyond the identity, so any one-parameter deformation is
     constant. -/
 structure RepresentationDeformation

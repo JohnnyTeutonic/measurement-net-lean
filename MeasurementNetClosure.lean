@@ -65,7 +65,7 @@ theorem inert_acts_trivially_downstairs
     K.descendsToAut η = 1 := by
   exact (K.kernel_is_inert η).mpr hη
 
-/-- Conversely, trivial descent characterizes inert microscopic symmetry. -/
+/-- Conversely, trivial descent characterises inert microscopic symmetry. -/
 theorem trivial_descent_is_inert
     {N : MeasurementNet.{u}} (E : ExactSequenceData N)
     (C : MicroscopicCompletion N) (K : ClosurePackage N E C)

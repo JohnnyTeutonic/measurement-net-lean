@@ -15,7 +15,7 @@
   analogous to the 't Hooft anomaly class in the generalised-symmetry
   literature (Freed–Moore–Teleman, Gaiotto–Kulp, Kong–Wen).
 
-  In this file we formalize:
+  In this file we formalise:
 
   (1) The abstract 2-group extension with its classifying class;
   (2) The triviality-of-class ↔ splitting correspondence;
@@ -48,7 +48,7 @@ namespace MeasurementNetAnomaly
     `Gauge1`   plays the role of π₀(𝒢_gauge) (the group-level gauge group);
     `Gauge2`   plays the role of π₁(𝒢_gauge) (the automorphisms of the
                identity automorphism of the fiber — typically an abelian
-               group, often a subgroup of the center of the fiber category);
+               group, often a subgroup of the centre of the fiber category);
     `Spacetime` plays the role of the spacetime symmetry group Sym(X). -/
 structure TwoGroupExtension where
   Gauge1 : Type u
@@ -69,7 +69,7 @@ attribute [instance] TwoGroupExtension.spacetimeGroup
 -- ============================================================================
 
 /-- The classifying anomaly class of a 2-group extension lives in
-    H³(B 𝒮ym(X); 𝒢_gauge). In this formalization, the group-cohomology
+    H³(B 𝒮ym(X); 𝒢_gauge). In this formalisation, the group-cohomology
     target is abstracted as the type `H3Target E`; for a concrete choice
     (see Section 4 for the Spin(8) case) it will be instantiated to
     `ℤ/6` or similar. -/

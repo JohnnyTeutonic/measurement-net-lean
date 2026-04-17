@@ -16,7 +16,7 @@
   (truncated to its 1-groupoid) into the classifying 2-stack
   B AutEq_2(𝒞) of auto-equivalences of the fiber 2-category.
 
-  In this file we formalize:
+  In this file we formalise:
 
   (1) The 2-functor `Π₁(X) → B AutEq_2(𝒞)` as a monodromy 2-functor;
   (2) The 2-level equivalence: 2-functors on objects + 2-natural
@@ -68,7 +68,7 @@ attribute [instance] FundamentalGroupoid1.pi1Group
 
     At the π₀ level this is `AutEq(𝒞)`. At the full 2-level we also
     record `π₁(AutEq_2(𝒞))`, which for Tannakian `𝒞 = Rep(G)` reduces
-    to the center `Z(G)`. -/
+    to the centre `Z(G)`. -/
 structure FiberAutEq2 where
   /-- π₀ of the auto-equivalence 2-group. -/
   AutEq0 : Type v
@@ -76,7 +76,7 @@ structure FiberAutEq2 where
   /-- π₁ of the auto-equivalence 2-group (abelian, typically ⊆ Z(𝒞)). -/
   AutEq1 : Type w
   [autEq1Group : CommGroup AutEq1]
-  /-- The action of π₀ on π₁ (for Tannakian fibers: outer → center,
+  /-- The action of π₀ on π₁ (for Tannakian fibers: outer → centre,
       via functoriality). -/
   action : AutEq0 →* (AutEq1 →* AutEq1)
 

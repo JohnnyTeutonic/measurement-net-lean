@@ -43,7 +43,7 @@ structure SplittingHypotheses (N : MeasurementNet.{u}) (E : LocalExactSequence N
   locallyConstant_gives_localSections :
     locallyConstant → ∀ U : N.Region, N.Contractible U → localSectionExists U
 
-/-- The paper's splitting lemma, formalized as an abstract theorem schema:
+/-- The paper's splitting lemma, formalised as an abstract theorem schema:
 rigidity of the categorical fibers forces local constancy, and local constancy
 forces local sections on contractible opens. -/
 theorem splitting_lemma

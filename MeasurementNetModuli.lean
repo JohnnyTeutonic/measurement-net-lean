@@ -2,7 +2,7 @@
   MeasurementNetModuli.lean
   Moduli-stack architecture for the measurement-net foundations paper (§7).
 
-  Formalizes:
+  Formalises:
   • Theorem 7.1  — Moduli discreteness (stacky Ocneanu rigidity):
       the 2-groupoid of ℂ-linear symmetric fusion categories of bounded rank
       has finitely many π₀ components, each governed by an automorphism 2-group.

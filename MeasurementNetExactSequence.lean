@@ -2,7 +2,7 @@
   MeasurementNetExactSequence.lean
   Core exact-sequence architecture for the measurement-net foundations paper.
 
-  Formalizes:
+  Formalises:
   • Theorem 4.4  — Short exact sequence  1 → G_gauge → Aut(Net) → Sym(X) → 1
   • Theorem 5.1  — Gauge/spacetime separation from exactness
   • Proposition 4.1 — Projection map  π : Aut(Net) → Homeo(X)
