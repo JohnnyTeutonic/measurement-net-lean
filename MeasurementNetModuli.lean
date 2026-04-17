@@ -21,6 +21,9 @@
 import Mathlib.Algebra.Group.Hom.Basic
 import Mathlib.Algebra.Group.Subgroup.Basic
 import Mathlib.GroupTheory.SpecificGroups.Dihedral
+import Mathlib.GroupTheory.GroupAction.ConjAct
+import Mathlib.Algebra.Group.Conj
+import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Tactic
 
 universe u v w
@@ -245,10 +248,35 @@ structure DeligneClassification where
   classification :
     ∀ (_N : ℕ) (_C : Type v), Prop  -- "C is a sym fusion cat of rank ≤ N"
 
-/-- Landau's theorem: for each k, finitely many groups with exactly k conjugacy
-    classes. This is the finiteness input for Step 2 of Theorem 7.1. -/
-theorem landau_finiteness (_k : ℕ) :
-    ∃ B : ℕ, ∀ n : ℕ, (n > B) → True :=  -- placeholder for "groups of order > B have > k classes"
-  ⟨0, fun _ _ => trivial⟩
+/-- Landau's theorem (packaged): for each conjugacy-class count `k`,
+    there exists an order bound `B(k)` such that no finite group of
+    order exceeding `B(k)` has exactly `k` conjugacy classes.
+
+    We do not reprove Landau's theorem from scratch here (the classical
+    proof via the class equation runs several pages).  Instead we bundle
+    the statement as structure fields, using `Nat.card G` and
+    `Nat.card (ConjClasses G)` as the group-order and class-count
+    invariants.  This replaces the earlier vacuous placeholder
+    `∃ B, ∀ n > B, True` with an honest non-trivial statement.
+
+    Downstream Theorem 7.1 Step 2 consumes a `LandauInput` to conclude
+    that `π₀(SymFus_ℂ^{≤N})` is finite. -/
+structure LandauInput where
+  /-- Order bound as a function of the conjugacy-class count. -/
+  bound : ℕ → ℕ
+  /-- The Landau property: no finite group of order strictly greater
+      than `bound k` can have exactly `k` conjugacy classes. -/
+  landau :
+    ∀ (G : Type) [Fintype G] [Group G] [DecidableEq G] (k : ℕ),
+      Nat.card G > bound k → Nat.card (ConjClasses G) ≠ k
+
+/-- Non-vacuous Landau statement consumed by Theorem 7.1, Step 2.
+    For every `k`, there is an order bound `B` such that groups of
+    order exceeding `B` cannot have exactly `k` conjugacy classes. -/
+theorem landau_finiteness (L : LandauInput) (k : ℕ) :
+    ∃ B : ℕ,
+      ∀ (G : Type) [Fintype G] [Group G] [DecidableEq G],
+        Nat.card G > B → Nat.card (ConjClasses G) ≠ k :=
+  ⟨L.bound k, fun G _ _ _ => L.landau G k⟩
 
 end MeasurementNetModuli

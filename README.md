@@ -23,12 +23,27 @@ Continuity, Finite Distinguishability) via categorical reconstruction.
 | `MeasurementNetClosure.lean` | §8 | Kernel-level closure; inert symmetry characterization; no-new-spacetime-symmetry theorem |
 | `MeasurementNetEnrichment.lean` | §8 | Heisenberg bridge schema; enrichment gap (monodromy alone does not close the gap to geometric quantization) |
 | `MeasurementNetQGObstruction.lean` | §8 | Fixed-target quantum gravity tension; target extension programme |
+| `MeasurementNetRigidity.lean` | §7 (Theorem B) | **Net rigidity**: fiber Ocneanu rigidity + discrete-target representation rigidity → vanishing net deformations; explicit reduction to Theorem A (moduli discreteness) |
+| `MeasurementNetAnomaly.lean` | §5+§7 (Theorem C) | **2-group extension** of the exact sequence with classifying anomaly class in H³(B Sym(X); Gauge₂); Spin(8)/Σ₁ numerical distribution (8 orbits → 6 anomaly classes) verified by `native_decide` |
+| `MeasurementNetMonodromy2Cat.lean` | §6 (Theorem D refined) | **2-categorical monodromy**: bijection between locally constant nets and monodromy 2-functors Π₁(X) → B AutEq₂(𝒞); π₀-truncation recovers the paper's Theorem 6.3 |
 
 ## Build Status
 
 - **Lean 4 v4.27.0-rc1** with **Mathlib** (2025 vintage)
 - **Zero `sorry`**, **zero `axiom`**, **zero warnings**
-- Full build: 3063 jobs, all passing
+- Full build: **3081 jobs**, all passing (12 `MeasurementNet*` libraries)
+
+## Theorem Package (CMP Submission Target)
+
+The formalization supports four main theorems foregrounded in the paper
+revision:
+
+| Theorem | Content | File |
+|---------|---------|------|
+| **A — Moduli discreteness** | π₀ of `SymFus_ℂ^{≤N}` is finite and discrete (stacky Ocneanu) | `MeasurementNetModuli.lean` |
+| **B — Net rigidity** | Locally constant measurement nets have vanishing deformations; reduces to A | `MeasurementNetRigidity.lean` |
+| **C — 2-group anomaly class** | π₀-exact-sequence lifts to 2-group extension classified by H³; Spin(8)/Σ₁ worked out | `MeasurementNetAnomaly.lean` |
+| **D — 2-categorical monodromy** | Locally constant nets ≃ monodromy 2-functors Π₁(X) → B AutEq₂(𝒞) | `MeasurementNetMonodromy2Cat.lean` |
 
 ## Building
 
@@ -36,12 +51,13 @@ These files are designed to build inside a Lake project with Mathlib as a depend
 To typecheck locally:
 
 ```bash
-# In a Lake project with Mathlib configured:
+# In a Lake project with Mathlib v4.27.0-rc1 configured:
 cp MeasurementNet*.lean /path/to/your/lean_project/
 cd /path/to/your/lean_project/
 lake build MeasurementNetExactSequence MeasurementNetSplitting MeasurementNetMonodromy \
   MeasurementNetModuli MeasurementNetIndependence MeasurementNetReconstruction \
-  MeasurementNetClosure MeasurementNetEnrichment MeasurementNetQGObstruction
+  MeasurementNetClosure MeasurementNetEnrichment MeasurementNetQGObstruction \
+  MeasurementNetRigidity MeasurementNetAnomaly MeasurementNetMonodromy2Cat
 ```
 
 ## Formalization Philosophy
